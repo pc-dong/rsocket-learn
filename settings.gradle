@@ -1,0 +1,3 @@
+rootProject.name = 'rsocket-learn'
+include 'rsocket-java-sdk'
+
