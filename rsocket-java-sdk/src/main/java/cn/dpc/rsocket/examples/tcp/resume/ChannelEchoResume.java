@@ -49,9 +49,9 @@ public class ChannelEchoResume {
                         Flux.interval(Duration.ofMillis(1000)).map(i -> DefaultPayload.create("Hello" + i)).onBackpressureDrop()
                 )
                 .map(Payload::getDataUtf8)
-//                .take(10)
+                .take(100)
                 .doOnNext(logger::info)
-//                .doFinally(signalType -> socket.dispose())
+                .doFinally(signalType -> socket.dispose())
                 .blockLast();
     }
 }
