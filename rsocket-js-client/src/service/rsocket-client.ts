@@ -1,19 +1,21 @@
-const {Flowable} = require('rsocket-flowable');
-const {RSocketClient} = require('rsocket-core');
-const RSocketTcpClient = require('rsocket-tcp-client').default;
-const {
+import {Flowable} from 'rsocket-flowable';
+import {RSocketClient} from 'rsocket-core';
+import RSocketWebSocketClient from 'rsocket-websocket-client';
+import {ReactiveSocket} from 'rsocket-types'
+import {
     BufferEncoders,
     encodeAndAddWellKnownMetadata,
     MESSAGE_RSOCKET_COMPOSITE_METADATA,
     MESSAGE_RSOCKET_ROUTING,
     encodeRoute,
     encodeCompositeMetadata
-} = require('rsocket-core');
+} from 'rsocket-core';
 
-let _rsocket = null;
+let _rsocket: ReactiveSocket<any, any>;
 
 async function connect() {
-    const transport = new RSocketTcpClient({host: '127.0.0.1', port: 8081}, BufferEncoders);
+    console.log('begin connect');
+    const transport = new RSocketWebSocketClient({url: "ws://127.0.0.1:8081"}, BufferEncoders);
     const setup = {
         keepAlive: 5000,
         lifetime: 30000,
@@ -22,10 +24,11 @@ async function connect() {
     }
     const clint = new RSocketClient({setup, transport});
     _rsocket = await clint.connect();
+    console.log('connected');
 }
 
 
-function log(message) {
+const log = (message: string) => {
     const routeMetadata = encodeRoute('log');
     const metadata = encodeAndAddWellKnownMetadata(
         Buffer.alloc(0),
@@ -36,7 +39,7 @@ function log(message) {
     _rsocket.fireAndForget({data: Buffer.from(message, 'utf8'), metadata});
 }
 
-function toUpperCase(message) {
+const toUpperCase = (message: string) => {
     const routeMetadata = encodeRoute('toUpperCase');
     const metadata = encodeAndAddWellKnownMetadata(
         Buffer.alloc(0),
@@ -47,27 +50,28 @@ function toUpperCase(message) {
     return _rsocket.requestResponse({data: Buffer.from(message, 'utf8'), metadata});
 }
 
-function channelToUpperCase(messages) {
+const channelToUpperCase = (messages: string[]) => {
     const routeMetadata = encodeRoute('channelToUpperCase');
     const metadata = encodeCompositeMetadata([
-        [MESSAGE_RSOCKET_ROUTING, routeMetadata]
-    ]
+            [MESSAGE_RSOCKET_ROUTING, routeMetadata]
+        ]
     );
 
     console.log(Array.isArray(messages));
 
-    const request = Flowable.just(...messages).map(message => {
-        console.log(message);
-        return {
-            data: Buffer.from(message, 'utf8'),
-            metadata
-        };
-    });
+    const request = Flowable.just(...messages)
+        .map((message: string) => {
+            console.log(message);
+            return {
+                data: Buffer.from(message, 'utf8'),
+                metadata
+            };
+        });
 
     return _rsocket.requestChannel(request);
 }
 
-function splitString(message) {
+const splitString = (message: string) => {
     const routeMetadata = encodeRoute('splitString');
     const metadata = encodeAndAddWellKnownMetadata(
         Buffer.alloc(0),
@@ -78,6 +82,10 @@ function splitString(message) {
     return _rsocket.requestStream({data: Buffer.from(message, 'utf8'), metadata});
 }
 
+const isConnected = () => !_rsocket
+
 connect().catch(error => console.error(error));
 
-module.exports = {log, toUpperCase, splitString, channelToUpperCase}
+const rsocketClient = {connect, isConnected, log, toUpperCase, splitString, channelToUpperCase}
+
+export default rsocketClient;

@@ -1,0 +1,27 @@
+spring:
+  main.lazy-initialization: true
+  rsocket:
+    server:
+      port: 8081
+      transport: tcp
+server:
+  port: 8080
+
+logging:
+  level:
+    io:
+      rsocket=DEBUG:
+
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: ws
+
+  rsocket:
+    server:
+      port: 8081
+      transport: websocket
+      mapping-path: "ws"
