@@ -1872,6 +1872,39 @@
   dependencies:
     "@types/node" "*"
 
+"@types/rsocket-core@*", "@types/rsocket-core@0.0.7":
+  version "0.0.7"
+  resolved "https://registry.npmmirror.com/@types/rsocket-core/-/rsocket-core-0.0.7.tgz#e9ed6d9ec918ec7a9aab0c48fefbb74b33712235"
+  integrity sha512-y4WRagbMA+7DZOtVbCow0Qkk7B8jJAH834Cu+ntmPqiAmHHn9RaVfwmlADQJk17Yuh+e6D5dS18oJNrpUXNEKQ==
+  dependencies:
+    "@types/node" "*"
+    "@types/rsocket-flowable" "*"
+    "@types/rsocket-types" "*"
+
+"@types/rsocket-flowable@*", "@types/rsocket-flowable@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.npmmirror.com/@types/rsocket-flowable/-/rsocket-flowable-0.0.5.tgz#abc144da8f9d5fb44b3fe4d9e3d764d5f3e35431"
+  integrity sha512-Xf9C8VCPqSPGXaFvnE31ifjQJACiNpxo8ujfeZ0vMHPOANxkbmiL8Crrxa3nUe1EVcFGDgmODUhLqnCcjPWjDQ==
+  dependencies:
+    "@types/rsocket-types" "*"
+
+"@types/rsocket-types@*":
+  version "0.0.3"
+  resolved "https://registry.npmmirror.com/@types/rsocket-types/-/rsocket-types-0.0.3.tgz#657e05a296fe0c22772faa6f469bbdc2a4a03af9"
+  integrity sha512-q6eHLNb65AOK6h06bqpVs7TN6bA/qukNdvNf+QLjDLKOTta2oRkrxa2aVB7S6/c7lrihPGZUwiO4ps6IKSjocA==
+  dependencies:
+    "@types/node" "*"
+    "@types/rsocket-flowable" "*"
+
+"@types/rsocket-websocket-client@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.npmmirror.com/@types/rsocket-websocket-client/-/rsocket-websocket-client-0.0.4.tgz#a3b1fced26f272e02c8020282dee01481e1c43c2"
+  integrity sha512-FAhbXRXq7ikkJZPDj1bHlgPLrDDIVGLCnAl5Dsl5PK7lpAxGZxe0WSJtFMBXLkQSGbTQgMS+GYj/oV/D65HSmg==
+  dependencies:
+    "@types/rsocket-core" "*"
+    "@types/rsocket-flowable" "*"
+    "@types/rsocket-types" "*"
+
 "@types/scheduler@*":
   version "0.16.1"
   resolved "https://registry.nlark.com/@types/scheduler/download/@types/scheduler-0.16.1.tgz#18845205e86ff0038517aab7a18a62a6b9f71275"
@@ -2483,7 +2516,7 @@ arrify@^2.0.1:
   resolved "https://registry.nlark.com/arrify/download/arrify-2.0.1.tgz#c9655e9331e0abcd588d2a7cad7e9956f66701fa"
   integrity sha1-yWVekzHgq81YjSp8rX6ZVvZnAfo=
 
-asap@~2.0.3, asap@~2.0.6:
+asap@~2.0.6:
   version "2.0.6"
   resolved "https://registry.npm.taobao.org/asap/download/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
   integrity sha1-5QNHYR1+aQlDIIu9r+vLwvuGbUY=
@@ -3638,13 +3671,6 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
-
-cross-fetch@^3.0.4:
-  version "3.1.4"
-  resolved "https://registry.npm.taobao.org/cross-fetch/download/cross-fetch-3.1.4.tgz#9723f3a3a247bf8b89039f3a380a9244e8fa2f39"
-  integrity sha1-lyPzo6JHv4uJA586OAqSROj6Lzk=
-  dependencies:
-    node-fetch "2.6.1"
 
 cross-spawn@7.0.3, cross-spawn@^7.0.0, cross-spawn@^7.0.2:
   version "7.0.3"
@@ -4953,24 +4979,6 @@ fb-watchman@^2.0.0:
   integrity sha1-/IT7OdJwnPP/bXQ3BhV7tXCKioU=
   dependencies:
     bser "2.1.1"
-
-fbjs-css-vars@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/fbjs-css-vars/download/fbjs-css-vars-1.0.2.tgz#216551136ae02fe255932c3ec8775f18e2c078b8"
-  integrity sha1-IWVRE2rgL+JVkyw+yHdfGOLAeLg=
-
-fbjs@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npm.taobao.org/fbjs/download/fbjs-3.0.0.tgz#0907067fb3f57a78f45d95f1eacffcacd623c165"
-  integrity sha1-CQcGf7P1enj0XZXx6s/8rNYjwWU=
-  dependencies:
-    cross-fetch "^3.0.4"
-    fbjs-css-vars "^1.0.0"
-    loose-envify "^1.0.0"
-    object-assign "^4.1.0"
-    promise "^7.1.1"
-    setimmediate "^1.0.5"
-    ua-parser-js "^0.7.18"
 
 figgy-pudding@^3.5.1:
   version "3.5.2"
@@ -7001,7 +7009,7 @@ loglevel@^1.6.8:
   resolved "https://registry.npm.taobao.org/loglevel/download/loglevel-1.7.1.tgz?cache=0&sync_timestamp=1606312277390&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Floglevel%2Fdownload%2Floglevel-1.7.1.tgz#005fde2f5e6e47068f935ff28573e125ef72f197"
   integrity sha1-AF/eL15uRwaPk1/yhXPhJe9y8Zc=
 
-loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
+loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npm.taobao.org/loose-envify/download/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha1-ce5R+nvkyuwaY4OffmgtgTLTDK8=
@@ -7422,11 +7430,6 @@ no-case@^3.0.4:
   dependencies:
     lower-case "^2.0.2"
     tslib "^2.0.3"
-
-node-fetch@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.npm.taobao.org/node-fetch/download/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
-  integrity sha1-BFvTI2Mfdu0uK1VXM5RBa2OaAFI=
 
 node-forge@^0.10.0:
   version "0.10.0"
@@ -8803,13 +8806,6 @@ promise-inflight@^1.0.1:
   resolved "https://registry.nlark.com/promise-inflight/download/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
   integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
 
-promise@^7.1.1:
-  version "7.3.1"
-  resolved "https://registry.npm.taobao.org/promise/download/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
-  integrity sha1-BktyYCsY+Q8pGSuLG8QY/9Hr078=
-  dependencies:
-    asap "~2.0.3"
-
 promise@^8.1.0:
   version "8.1.0"
   resolved "https://registry.npm.taobao.org/promise/download/promise-8.1.0.tgz#697c25c3dfe7435dd79fcd58c38a135888eaf05e"
@@ -9525,39 +9521,29 @@ rollup@^1.31.1:
     "@types/node" "*"
     acorn "^7.1.0"
 
-rsocket-core@0.0.25, rsocket-core@^0.0.25:
-  version "0.0.25"
-  resolved "https://registry.nlark.com/rsocket-core/download/rsocket-core-0.0.25.tgz#f1e1a3e7e8e369616a53eb76278aa7ad59d43ebe"
-  integrity sha1-8eGj5+jjaWFqU+t2J4qnrVnUPr4=
+rsocket-composite-metadata@^1.0.0-alpha.2:
+  version "1.0.0-alpha.2"
+  resolved "https://registry.npmmirror.com/rsocket-composite-metadata/-/rsocket-composite-metadata-1.0.0-alpha.2.tgz#b7045d73e805fe04ac9fb4ff22c7125f96d14742"
+  integrity sha512-zaEQ28VkGwzpMQPuI+SFJK5EqrYWsaI0qr5IG2DiFlloRE3VW9YmyM+yj98qon+kTCQ05WjH+GdlFs3SrU1pVg==
   dependencies:
-    fbjs "^3.0.0"
-    rsocket-flowable "^0.0.25"
-    rsocket-types "^0.0.25"
+    rsocket-core "^1.0.0-alpha.1"
 
-rsocket-flowable@0.0.25, rsocket-flowable@^0.0.25:
-  version "0.0.25"
-  resolved "https://registry.nlark.com/rsocket-flowable/download/rsocket-flowable-0.0.25.tgz#cf1e14ee084b2039304636914782ea854b878f96"
-  integrity sha1-zx4U7ghLIDkwRjaRR4LqhUuHj5Y=
-  dependencies:
-    fbjs "^3.0.0"
+rsocket-core@1.0.0-alpha.1, rsocket-core@^1.0.0-alpha.1:
+  version "1.0.0-alpha.1"
+  resolved "https://registry.npmmirror.com/rsocket-core/-/rsocket-core-1.0.0-alpha.1.tgz#383084e09604dc1b75c85809703a5769b1e2706e"
+  integrity sha512-xStK9VyEScp1abXRKlUhdswebPA8FSmhDpKhc2oExazLoIxLu8mJa89iMcs3+0DCC6ENOVXLJKhY5zXMNI/JQA==
 
-rsocket-types@^0.0.25:
-  version "0.0.25"
-  resolved "https://registry.nlark.com/rsocket-types/download/rsocket-types-0.0.25.tgz#c0a9559ff74b78b4e17f92da322a7be7323ee901"
-  integrity sha1-wKlVn/dLeLThf5LaMip75zI+6QE=
-  dependencies:
-    fbjs "^3.0.0"
-    rsocket-flowable "^0.0.25"
+rsocket-flowable@0.0.27:
+  version "0.0.27"
+  resolved "https://registry.npmmirror.com/rsocket-flowable/-/rsocket-flowable-0.0.27.tgz#389254cc1532908ae8b3ac033dc2374f57e2d661"
+  integrity sha512-I/1vETXP+qCfGFeMY8i+QLhyBpcEj0nDmWnP2vh7lDyOBNT9LjAiY6kigUzEHbfhoNe3vnJWYK6uCzxIsi622Q==
 
-rsocket-websocket-client@0.0.25:
-  version "0.0.25"
-  resolved "https://registry.nlark.com/rsocket-websocket-client/download/rsocket-websocket-client-0.0.25.tgz#6db21e323705755dc8fad214c9cfc345dae6df40"
-  integrity sha1-bbIeMjcFdV3I+tIUyc/DRdrm30A=
+rsocket-websocket-client@1.0.0-alpha.1:
+  version "1.0.0-alpha.1"
+  resolved "https://registry.npmmirror.com/rsocket-websocket-client/-/rsocket-websocket-client-1.0.0-alpha.1.tgz#f8ed20cd8fce4e69b0e2f39875d4cd6c49cd9fdd"
+  integrity sha512-DMnRWUEhj2zc8Yu/FYD3HeqaLsW4QbSr0VN9X5f4SSFQ1elb2LRNdeXRmS157VBeuBcHwAuj0ZJnrDl1yOK43Q==
   dependencies:
-    fbjs "^3.0.0"
-    rsocket-core "^0.0.25"
-    rsocket-flowable "^0.0.25"
-    rsocket-types "^0.0.25"
+    rsocket-core "^1.0.0-alpha.1"
 
 rsvp@^4.8.4:
   version "4.8.5"
@@ -9788,7 +9774,7 @@ set-value@^2.0.0, set-value@^2.0.1:
     is-plain-object "^2.0.3"
     split-string "^3.0.1"
 
-setimmediate@^1.0.4, setimmediate@^1.0.5:
+setimmediate@^1.0.4:
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/setimmediate/download/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
   integrity sha1-KQy7Iy4waULX1+qbg3Mqt4VvgoU=
@@ -10698,11 +10684,6 @@ typescript@^4.1.2:
   version "4.3.4"
   resolved "https://registry.nlark.com/typescript/download/typescript-4.3.4.tgz#3f85b986945bcf31071decdd96cf8bfa65f9dcbc"
   integrity sha1-P4W5hpRbzzEHHezdls+L+mX53Lw=
-
-ua-parser-js@^0.7.18:
-  version "0.7.28"
-  resolved "https://registry.npm.taobao.org/ua-parser-js/download/ua-parser-js-0.7.28.tgz#8ba04e653f35ce210239c64661685bf9121dec31"
-  integrity sha1-i6BOZT81ziECOcZGYWhb+RId7DE=
 
 unbox-primitive@^1.0.1:
   version "1.0.1"

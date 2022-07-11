@@ -30,6 +30,7 @@ public class ClientService {
                 .setupData("test")
 //                .rsocketStrategies(rSocketStrategies)
                 .tcp("localhost", 8081);
+        System.out.println(rSocketRequester);
 
 
 //        this.rSocketRequester.rsocket()

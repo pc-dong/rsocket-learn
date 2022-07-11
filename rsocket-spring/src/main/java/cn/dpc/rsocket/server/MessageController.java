@@ -53,7 +53,8 @@ public class MessageController {
 
     @MessageMapping({"channelToUpperCase"})
     Flux<Message> channelToUpperCase(Flux<String> messages) {
-        return messages.map(String::toUpperCase)
+        return Flux.interval(Duration.ofSeconds(1)).zipWith(messages)
+                .map(tuple -> tuple.getT2().toUpperCase())
                 .map(Message::new);
     }
 
